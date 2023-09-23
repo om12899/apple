@@ -1,0 +1,18 @@
+.topNav{
+    background: rgba(206, 206, 206, 0.5); /* Adjust the alpha (fourth value) for opacity */
+  backdrop-filter: blur(50px);
+  display: flex;
+  position: sticky;
+  justify-content: center;
+  padding: 1px;
+}
+.store-expansion {
+    position: static;
+    top: 100%;
+    left: 0;
+    z-index: 10000000000001; /* Adjust the z-index as needed */
+  }
+
+  .content{
+    position: relative;
+  }

@@ -1,9 +1,22 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import './Navbar.css'
+import StoreExpansion from './StoreExpansion';
 function Navbar2() {
+  const [storeHover, setStoreHover] = useState(false);
+  const handleHoverStore=(e)=>{
+    console.log("hi from store")
+
+    e.preventDefault()
+    setStoreHover(true)
+  }
+  const handleHoverRemoveStore =()=>{
+    console.log("bye from store")
+    setStoreHover(false)
+  }
   return (
-    <div className='d-flex justify-content-center p-1 bg-body-tertiary'>
-<nav className="navbar navbar-expand-lg p-0 bg-body-tertiary">
+    <>
+    <div className='topNav  sticky-top'>
+<nav className="navbar navbar-expand-lg p-0">
        <a className="nav-link navbar-brand pb-1" href="/">
         <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" width='12px' alt="logo" />
     </a>
@@ -11,35 +24,35 @@ function Navbar2() {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">   
     <ul className="navbar-nav fs-6 me-auto mb-2 mb-lg-0">
     
-    <li className="px-2">
-          <a className="nav-link fw-lighter" href="/">Store</a>
+    <li className="nav-item px-2">
+          <a className="nav-link fw-light " onMouseOut={handleHoverRemoveStore} onMouseOver={handleHoverStore} href="/">Store</a>
         </li>
         <li className="nav-item px-2">
-          <a className="nav-link fw-lighter" href="/">Mac</a>
+          <a className="nav-link fw-light" href="/">Mac</a>
         </li>
         <li className="nav-item px-2">
-          <a className="nav-link fw-lighter" href="/">iPad</a>
+          <a className="nav-link fw-light" href="/">iPad</a>
         </li>
         <li className="nav-item px-2">
-          <a className="nav-link fw-lighter" href="/">iPhone</a>
+          <a className="nav-link fw-light" href="/">iPhone</a>
         </li>
         <li className="nav-item px-2">
-          <a className="nav-link fw-lighter" href="/">Watch</a>
+          <a className="nav-link fw-light" href="/">Watch</a>
         </li>
         <li className="nav-item px-2">
-          <a className="nav-link fw-lighter" href="/">AirPods</a>
+          <a className="nav-link fw-light" href="/">AirPods</a>
         </li>
         <li className="nav-item px-2">
-          <a className="nav-link fw-lighter" href="/">TV & Home</a>
+          <a className="nav-link fw-light" href="/">TV & Home</a>
         </li>
         <li className="nav-item px-2">
-          <a className="nav-link fw-lighter" href="/">Entertainment</a>
+          <a className="nav-link fw-light" href="/">Entertainment</a>
         </li>
         <li className="nav-item px-2">
-          <a className="nav-link fw-lighter" href="/">Accesories</a>
+          <a className="nav-link fw-light" href="/">Accesories</a>
         </li>
         <li className="nav-item px-2">
-          <a className="nav-link fw-lighter" href="/">Support</a>
+          <a className="nav-link fw-light" href="/">Support</a>
         </li>
        
         
@@ -73,9 +86,14 @@ function Navbar2() {
   <path d="M3 4.5h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1H3zM1 2a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 2zm0 12a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 14z"/>
 </svg> </button>
        </nav>
-   
+         
        
        </div>
+       {storeHover && (
+          <StoreExpansion />
+        )}
+       </>
+       
   )
 }
 
