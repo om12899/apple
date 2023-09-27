@@ -2,7 +2,7 @@ import React from 'react'
 import './Navbar.css'
 function StoreExpansion() {
   return (
-    <div className='store-expansion zindex-dropdown d-flex align-items-start py-5'>
+    <div className='store-expansion bg-light d-flex align-items-start py-5'>
         <div className='p-5'>
             <p>Shop</p>
             <h3>Shop the Latest</h3>

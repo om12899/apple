@@ -24,11 +24,17 @@ function Navbar2() {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">   
     <ul className="navbar-nav fs-6 me-auto mb-2 mb-lg-0">
     
-    <li className="nav-item px-2">
-          <a className="nav-link fw-light " onMouseOut={handleHoverRemoveStore} onMouseOver={handleHoverStore} href="/">Store</a>
+    <li className="nav-item dropdown position-static px-2">
+          <a className="nav-link fw-light dropdown-toggle " role="button" data-bs-toggle="dropdown" aria-expanded="false" onMouseOut={handleHoverRemoveStore} onMouseOver={handleHoverStore} href="/">Store</a>
+          <div className='dropdown-menu w-100 store-expansion'>
+            <StoreExpansion/>
+          </div>
         </li>
-        <li className="nav-item px-2">
-          <a className="nav-link fw-light" href="/">Mac</a>
+        <li className="nav-item dropdown open position-static px-2" style={{position:'initial'}}>
+        <a className="nav-link fw-light dropdown-toggle " role="button" data-bs-toggle="dropdown" aria-expanded="false" onMouseOut={handleHoverRemoveStore} onMouseOver={handleHoverStore} href="/">Mac</a>
+        <div className='dropdown-menu w-100 store-expansion' style={{width:'100%'}}>
+            <StoreExpansion/>
+          </div>
         </li>
         <li className="nav-item px-2">
           <a className="nav-link fw-light" href="/">iPad</a>
@@ -89,9 +95,7 @@ function Navbar2() {
          
        
        </div>
-       {storeHover && (
-          <StoreExpansion />
-        )}
+       
        </>
        
   )
